@@ -12,6 +12,7 @@ $ npm i drizzle-kit -D
 $ npm i zod
 $ npm i postgres
 $ npm i @paralleldrive/cuid2
+$ npm i dayjs
 ```
 
  # Cole no arquivo tsconfig.json - acesse o site (tsconfig base)
