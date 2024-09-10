@@ -11,6 +11,7 @@ $ npm i drizzle-orm
 $ npm i drizzle-kit -D
 $ npm i zod
 $ npm i postgres
+$ npm i @paralleldrive/cuid2
 ```
 
  # Cole no arquivo tsconfig.json - acesse o site (tsconfig base)
@@ -49,6 +50,13 @@ $ npm i postgres
 
 ```
 $ docker compose up -d
+```
+
+# Crie um arquivo Seed 
+## Objetivo: O arquivo Seed é responsável por inserir dados iniciais no banco de dados, como usuários, categorias, produtos, etc. Isso ajuda a criar um ambiente de desenvolvimento mais realista e facilita a testagem e depuração da aplicação por outros desenvolvedores.
+
+```
+$ touch src/db/seed.ts
 ```
 
 # Execute o Drizzle-kit
