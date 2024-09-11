@@ -39,8 +39,9 @@ $ npm i fastify-type-provider-zod
 ### no arquivo package.json, edite o script do arquivo 
     
 ```
-    "scripts": {
-        "dev": "tsx --env-file .env watch src/http/server.ts"
+  "scripts": {
+        "dev": "tsx watch --env-file .env src/http/server.ts",
+        "seed": "tsx --env-file .env src/db/seed.ts"
     },
 ```
 
@@ -51,6 +52,7 @@ $ npm i fastify-type-provider-zod
 
 ```
 $ touch src/db/seed.ts
+$ npm run seed
 ```
 # Play no Projeto
 
@@ -64,7 +66,7 @@ $ npm run dev
 $ docker compose up -d
 ```
 
-# Play no Drizzle-kit
+# Play no Drizzle-kit studio
 
 ```
 $ npx drizzle-kit generate
