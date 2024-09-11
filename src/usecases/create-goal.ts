@@ -1,22 +1,23 @@
-import { db } from "../db"
-import { goals } from "../db/schema"
-
+import { db } from '../db'
+import { goals } from '../db/schema'
 
 interface CreateGoalRequest {
-    title: string,
-    desiredWeeklyFrequency: number
+  title: string
+  desiredWeeklyFrequency: number
 }
 
-export async function createGoal({ title, desiredWeeklyFrequency }: CreateGoalRequest) {
+export async function createGoal({
+  title,
+  desiredWeeklyFrequency,
+}: CreateGoalRequest) {
+  const result = await db.insert(goals).values({
+    title: title,
+    desiredWeeklyFrequency: desiredWeeklyFrequency,
+  })
 
-    const result = await db.insert(goals).values({
-        title: title,
-        desiredWeeklyFrequency: desiredWeeklyFrequency,
-    })
+  const goal = result[0]
 
-    const goal = result[0]
-
-    return {
-        goal,
-    }
+  return {
+    goal,
+  }
 }
