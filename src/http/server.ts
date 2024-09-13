@@ -1,3 +1,4 @@
+import fastifyCors from '@fastify/cors'
 import fastify from 'fastify'
 import {
   type ZodTypeProvider,
@@ -10,6 +11,10 @@ import { createGoalRoute } from '../routes/create_goal'
 import { getPendingGoalsRoute } from '../routes/get_pendind_goals'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
+
+app.register(fastifyCors, {
+  origin: '*',
+})
 
 // Add schema validator and serializer
 app.setValidatorCompiler(validatorCompiler)

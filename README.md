@@ -1,5 +1,25 @@
 # Projeto In Orbit 
 
+# Play no Projeto
+
+```
+$ npm run dev
+```
+
+# Play no Docker + Postgres
+
+```
+$ docker compose up -d
+```
+
+# Play no Drizzle-kit studio
+
+```
+$ npx drizzle-kit generate
+$ npx drizzle-kit migrate
+$ npx drizzle-kit studio
+```
+
 # Dependencias
 ```
 $ npm init -y
@@ -14,6 +34,7 @@ $ npm i postgres
 $ npm i @paralleldrive/cuid2
 $ npm i dayjs
 $ npm i fastify-type-provider-zod
+$ npm i @fastify/cors
 ```
 
 # Configuracoes 
@@ -49,30 +70,22 @@ $ npm i fastify-type-provider-zod
 # Database 
 
 ## Seed: O arquivo Seed é responsável por inserir dados iniciais no banco de dados, como usuários, categorias, produtos, etc. Isso ajuda a criar um ambiente de desenvolvimento mais realista e facilita a testagem e depuração da aplicação por outros desenvolvedores.
-
 ```
 $ touch src/db/seed.ts
 $ npm run seed
 ```
-# Play no Projeto
 
-```
-$ npm run dev
-```
+# Security 
 
-# Play no Docker + Postgres
-
+## Cors: dentro do arquivo server.ts, adicionamos uma regra de seguranca, para bloquear outros aplicativos web, de terem acesso a nossa API.
 ```
-$ docker compose up -d
+app.register(fastifyCors, {
+  origin: '<url do seu frontend autorizado>',
+})
 ```
 
-# Play no Drizzle-kit studio
 
-```
-$ npx drizzle-kit generate
-$ npx drizzle-kit migrate
-$ npx drizzle-kit studio
-```
+
 
 # Postman 
 ### primeira rota (CreateGoal)
